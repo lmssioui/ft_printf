@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_hexa1(unsigned int x)
 {
 	char	*hexa;
-	int	res[100];
-	int	i;
-	int	c;
+	int		res[20];
+	int		i;
+	int		c;
 
 	i = 0;
 	hexa = "0123456789ABCDEF";
@@ -37,7 +37,7 @@ int	ft_print_hexa1(unsigned int x)
 	return (c);
 }
 /*#include <stdio.h>
-int main()
+int	main(void)
 {
 	int d = ft_print_hexa(14268);
 	printf("--->%d\n",d);

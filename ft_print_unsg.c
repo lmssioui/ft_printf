@@ -1,47 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*   ft_print_unsg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouyata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 16:08:40 by abouyata          #+#    #+#             */
-/*   Updated: 2023/12/04 18:22:01 by abouyata         ###   ########.fr       */
+/*   Created: 2023/12/06 09:40:00 by abouyata          #+#    #+#             */
+/*   Updated: 2023/12/06 10:11:44 by abouyata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hexa(unsigned int x)
+int	ft_print_unsg(unsigned int n)
 {
-	char	*hexa;
-	char	res[20];
-	int		i;
-	int		c;
+	int				count;
 
-	i = 0;
-	hexa = "0123456789abcdef";
-	while (x >= 16)
+	count = 0;
+	if (n < 10)
 	{
-		res[i] = hexa[x % 16];
-		x = x / 16;
-		i++;
+		ft_putchar(n + '0');
+		count++;
 	}
-	c = i + 1;
-	res[i] = hexa[x];
-	while (i >= 0)
+	else
 	{
-		ft_putchar(res[i]);
-		i--;
+		count = ft_print_unsg(n / 10);
+		count += ft_putchar(n % 10 + '0');
 	}
-	return (c);
+	return (count);
 }
 /*#include <stdio.h>
+#include <limits.h>
 int	main(void)
 {
-	int d = ft_print_hexa(14268);
+	int d = ft_print_unsg(INT_MAX);
 	printf("--->%d\n",d);
-	int d1 = printf("%x",14268);
-	printf("--->%d\n", d1);
-
+	int d1 = printf("%u",INT_MAX);
+	printf("--->%d",d1);
 }*/

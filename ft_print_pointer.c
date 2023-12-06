@@ -6,54 +6,32 @@
 /*   By: abouyata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:26:30 by abouyata          #+#    #+#             */
-/*   Updated: 2023/12/04 20:47:14 by abouyata         ###   ########.fr       */
+/*   Updated: 2023/12/06 11:00:30 by abouyata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_print_pointer(void *p)
+int ft_print_pointer(unsigned long n)
 {
-	intptr_t c;
-	const char *hex_digit;
-	char 	res[20];
-	int 	i;
-	int	j;
-	int	start;
-	int	end;
-	char	temp;
+	int j;
+	char *array;
 
-	hex_digit = "0123456789abcdef";
-	i = 0;
-	c = (intptr_t)p;
-	while(c != 0)
-	{
-		res[i++] = hex_digit[c % 16];
-		c /= 16;
-	}
-	res[i++] = 'x';
-	res[i++] = '0';
-	start = 0;
-	end = i - 1;
-	while (start < end)
-	{
-		temp = res[start];
-		res[start] = res[end];
-		res[end] = temp;
-		start++;
-		end--;
-	}
 	j = 0;
-	while (j < i)
+	array = "0123456789abcdef";
+	if (n >= 16)
 	{
-		ft_putchar(res[j]);
-		j++;
+		j += ft_print_pointer(n / 16);
+		j += ft_print_pointer(n % 16);
+	}
+	else
+	{
+		j+=ft_putchar(array[n]);
 	}
 	return (j);
-
 }
-#include <stdio.h>
-int main()
+/*#include <stdio.h>
+int	main(void)
 {
 	int a = 5;
 	void *c = &a;
@@ -61,4 +39,4 @@ int main()
 	printf("--->%d\n",d);
 	int d2 = printf("%p",c);
 	printf("--->%d\n",d2);
-}
+}*/
