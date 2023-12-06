@@ -13,10 +13,10 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putchar(int c);
@@ -25,7 +25,7 @@ int	ft_putnbr(int nb);
 int	ft_strlen(char *s);
 int	ft_print_hexa(unsigned int x);
 int	ft_print_hexa1(unsigned int x);
-int ft_print_pointer(unsigned long n);
+int	ft_print_pointer(unsigned long n);
 int	ft_print_unsg(unsigned int u);
 
 #endif

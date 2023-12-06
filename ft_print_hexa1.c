@@ -36,12 +36,3 @@ int	ft_print_hexa1(unsigned int x)
 	}
 	return (c);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	int d = ft_print_hexa(14268);
-	printf("--->%d\n",d);
-	int d1 = printf("%x",14268);
-	printf("--->%d\n", d1);
-
-}*/

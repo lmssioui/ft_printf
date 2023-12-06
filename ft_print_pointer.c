@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-int ft_print_pointer(unsigned long n)
+int	ft_print_pointer(unsigned long n)
 {
-	int j;
-	char *array;
+	int		j;
+	char	*array;
 
 	j = 0;
 	array = "0123456789abcdef";
@@ -26,17 +26,7 @@ int ft_print_pointer(unsigned long n)
 	}
 	else
 	{
-		j+=ft_putchar(array[n]);
+		j += ft_putchar(array[n]);
 	}
 	return (j);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	int a = 5;
-	void *c = &a;
-	int d = ft_print_pointer(c);
-	printf("--->%d\n",d);
-	int d2 = printf("%p",c);
-	printf("--->%d\n",d2);
-}*/

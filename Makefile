@@ -8,17 +8,24 @@ OBJ = $(SRC:.c=.o)
 
 all = $(NAME)
 
-$(NAME) : $(OBJ)
+LIBC = ar -rc
+CC = cc
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror
 
-.c.o :
-	cc $(CFLAGS) -c $< -o $@
-	ar -rc $(NAME) $@
+all: ${NAME}
+
+${NAME} : ${OBJ}
+
+.c.o:
+	${CC} ${CFLAGS} -c $< -o $@
+	${LIBC} ${NAME} $@
 
 clean:
-	rm -f $(OBJ)
+	${RM} ${OBJ}
 
 fclean: clean
-	rm -f $(NAME)
+	${RM} ${NAME}
 
 re: fclean all
 
