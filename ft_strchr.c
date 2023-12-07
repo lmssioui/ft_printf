@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abouyata <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/07 10:55:42 by abouyata          #+#    #+#             */
+/*   Updated: 2023/12/07 10:55:46 by abouyata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_strchr(const char *s, int c)
+int	ft_strchr(const char *s, int c)
 {
-    while (*s)
-    {
-        if(*s == (char)c)
-            return(1);
-        s++;
-    }
-    if (*s == (char)c)
-        return(1);
-    return (0);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return (1);
+		s++;
+	}
+	if (*s == (char)c)
+		return (1);
+	return (0);
 }

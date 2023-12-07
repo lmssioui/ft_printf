@@ -6,7 +6,7 @@
 /*   By: abouyata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 02:52:47 by abouyata          #+#    #+#             */
-/*   Updated: 2023/12/06 14:32:44 by abouyata         ###   ########.fr       */
+/*   Updated: 2023/12/07 14:11:26 by abouyata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,8 @@ int	ft_printf(const char *format, ...)
 				return (count);
 			if (ft_strchr("cspdiuxX", *format))
 				count += ft_printf_exe(*format, p);
-			else 
-			{
-				--format;
+			else
 				count += ft_putchar(*format);
-			}
 		}
 		else
 			count += ft_putchar(*format);

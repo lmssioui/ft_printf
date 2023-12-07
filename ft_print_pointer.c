@@ -6,7 +6,7 @@
 /*   By: abouyata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:26:30 by abouyata          #+#    #+#             */
-/*   Updated: 2023/12/06 11:00:30 by abouyata         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:56:40 by abouyata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_print_pointer(unsigned long n)
 	array = "0123456789abcdef";
 	if (n >= 16)
 	{
-		j += ft_print_pointer(n / 16);
+		j+= ft_print_pointer(n / 16);
 		j += ft_print_pointer(n % 16);
 	}
 	else
