@@ -27,5 +27,6 @@ int	ft_print_hexa(unsigned int x);
 int	ft_print_hexa1(unsigned int x);
 int	ft_print_pointer(unsigned long n);
 int	ft_print_unsg(unsigned int u);
+int ft_strchr(const char *s, int c);
 
 #endif

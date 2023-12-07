@@ -54,7 +54,13 @@ int	ft_printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				return (count);
-			count += ft_printf_exe(*format, p);
+			if (ft_strchr("cspdiuxX", *format))
+				count += ft_printf_exe(*format, p);
+			else 
+			{
+				--format;
+				count += ft_putchar(*format);
+			}
 		}
 		else
 			count += ft_putchar(*format);
@@ -63,11 +69,3 @@ int	ft_printf(const char *format, ...)
 	va_end(p);
 	return (count);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	int d = ft_printf("%d %s",142, NULL);
-	ft_printf("-->%d\n",d);
-	int d1 = printf("%d %s",142,NULL);
-	printf("-->%d",d1);
-}*/

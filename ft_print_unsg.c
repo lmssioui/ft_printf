@@ -24,7 +24,7 @@ int	ft_print_unsg(unsigned int n)
 	}
 	else
 	{
-		count = ft_print_unsg(n / 10);
+		count += ft_print_unsg(n / 10);
 		count += ft_putchar(n % 10 + '0');
 	}
 	return (count);
